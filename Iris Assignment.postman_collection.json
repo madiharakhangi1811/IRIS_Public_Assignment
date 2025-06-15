@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "0fed95e4-49e4-4bb9-bfe5-425f35aee4f2",
+		"name": "Iris Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "45748414"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9090/list_tables"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 15 Jun 2025 10:40:19 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "167"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tables\": [\n        \"INITIAL INVESTMENT\",\n        \"CASHFLOW DETAILS\",\n        \"DISCOUNT RATE\",\n        \"WORKING CAPITAL\",\n        \"GROWTH RATES\",\n        \"SALVAGE VALUE\",\n        \"OPERATING CASHFLOWS\",\n        \"BOOK VALUE & DEPRECIATION\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/get_table_details?table_name=INITIAL INVESTMENT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"get_table_details"
+							],
+							"query": [
+								{
+									"key": "table_name",
+									"value": "INITIAL INVESTMENT"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 15 Jun 2025 10:43:46 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "184"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"table_name\": \"INITIAL INVESTMENT\",\n    \"row_names\": [\n        \"INITIAL INVESTMENT\",\n        \"Investment\",\n        \"- Tax Credit\",\n        \"Net Investment\",\n        \"+ Working Cap\",\n        \"+ Opp. Cost\",\n        \"+ Other invest.\",\n        \"Initial Investment\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/row_sum?table_name=INITIAL INVESTMENT&row_name=Net Investment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"row_sum"
+							],
+							"query": [
+								{
+									"key": "table_name",
+									"value": "INITIAL INVESTMENT"
+								},
+								{
+									"key": "row_name",
+									"value": "Net Investment"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 15 Jun 2025 10:44:46 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "67"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"table\": \"INITIAL INVESTMENT\",\n    \"row\": \"Net Investment\",\n    \"sum\": 45000\n}"
+				}
+			]
+		}
+	]
+}

@@ -1,14 +1,6 @@
 # FastAPI Excel Processor Assignment
 
-## Overview
-
-The primary goal of this assignment is to assess your understanding of API development using FastAPI, your problem-solving skills, your coding style, and your ability to present your work clearly and professionally.
-
-You are tasked with creating a FastAPI application that can read data from a given Excel sheet and expose a few endpoints to interact with this data.
-
-## Tasks
-
-Your main task is to develop a FastAPI application with the following functionalities:
+n task is to develop a FastAPI application with the following functionalities:
 
 ### 1. Excel Sheet Processing
 The application must be able to read a provided Excel sheet and parse its contents (`/Data/capbudg.xls`).
@@ -60,24 +52,6 @@ You need to implement the following FastAPI endpoints. Please use `http://localh
      ```
      *(Note: You can decide whether to include units like '%' in the response or just return the numerical sum. Please clarify your approach in your documentation.)*
 
-## Evaluation Criteria
-
-We will be evaluating your submission based on the following:
-
-*   **Problem-Solving Skills:** Your ability to understand the requirements and implement a functional solution.
-*   **Coding Style:** Clarity, organization, and adherence to Python best practices. We expect well-structured, modular code, with docstrings, and robust error handling etc.
-*   **Presentation Style:** The quality and completeness of this `README.md` file (which you will update with your insights) and the Postman collection.
-*   **Documentation:** Ensure your code is well-documented.
-
-## Your Insights
-
-Please complete the following sections with your thoughts on the assignment.
-
-### Potential Improvements
-*(Describe any ideas you have on how this application or assignment could be improved or extended. For example, handling different Excel formats, more advanced data operations, UI integration, etc.)*
-
-### Missed Edge Cases
-*(Identify any edge cases or scenarios that your current implementation might not handle or that were not explicitly covered in the requirements. For example, empty Excel files, tables with no numerical data, malformed table names, etc.)*
 
 ## Testing
 
@@ -86,10 +60,14 @@ To help us quickly test your application, please provide a Postman collection JS
 *   **Base URL:** `http://localhost:9090` and the given endpoint names.
 *   **Postman Collection:** 
 
-## Deadline
+## Potential Improvements
 
-Please submit your solution by **Saturday, May 10th, EOD**. Ensure you fill out the form provided in your email with the repository link (make sure the repository is public) and any other requested details. We plan to evaluate the submissions early Sunday morning and will schedule final interviews on the same day.
+1.Allow file uploads through the API (/upload-excel) to make it dynamic.
 
-Feel free to open an issue in this repo if you have any questions. Your honesty is appreciated in this test.
+## Missed Edge Cases
 
-Good luck! We look forward to reviewing your submission. 
+1. Sheets with no recognizable tables will be silently ignored.
+2. Rows with mixed text and numbers may partially fail to sum correctly.
+3. Table headers that do not meet the "uppercase with spaces" rule will be skipped.
+4. File not found or malformed Excel file errors are caught but not deeply diagnosed.
+5. Row names must match exactly — no fuzzy matching or suggestions are implemented.
