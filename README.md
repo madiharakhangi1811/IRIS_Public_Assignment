@@ -2,6 +2,24 @@
 
 n task is to develop a FastAPI application with the following functionalities:
 
+## How to Run
+
+**Prerequisites**
+
+Python 3.9+
+
+Install dependencies:
+
+pip install fastapi uvicorn pandas openpyxl xlrd
+
+**Run the server**
+
+uvicorn main:app --reload --port 9090
+
+Visit the Swagger UI at: http://localhost:9090/docs
+
+
+
 ### 1. Excel Sheet Processing
 The application must be able to read a provided Excel sheet and parse its contents (`/Data/capbudg.xls`).
 
