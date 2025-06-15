@@ -56,10 +56,7 @@ Visit the Swagger UI at: http://localhost:9090/docs
        "row_name": "Tax Credit (if any )=",
        "sum": 10 
      }
-     ```
-     *(Note: You can decide whether to include units like '%' in the response or just return the numerical sum. Please clarify your approach in your documentation.)*
-
-
+     
 ## Testing
 
 You can import the following Postman collection to test:
