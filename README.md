@@ -18,13 +18,7 @@ uvicorn main:app --reload --port 9090
 
 Visit the Swagger UI at: http://localhost:9090/docs
 
-
-
-### 1. Excel Sheet Processing
-The application must be able to read a provided Excel sheet and parse its contents (`/Data/capbudg.xls`).
-
-### 2. API Endpoints
-You need to implement the following FastAPI endpoints. Please use `http://localhost:9090` as the base URL for your endpoints.
+### API Endpoints
 
 #### a. `GET /list_tables`
    - **Functionality:** This endpoint should list all the table names present in the uploaded/specified Excel sheet.
@@ -36,8 +30,6 @@ You need to implement the following FastAPI endpoints. Please use `http://localh
      ```
 
 #### b. `GET /get_table_details`
-   - **Parameters:**
-     - `table_name: str` (Query parameter specifying the name of the table)
    - **Functionality:** This endpoint should return the names of the rows for the selected table. These row names are typically the values found in the first column of that table.
    - **Example:** If the user selects the "Initial Investment" table, the API should list the first column values like so:
      ```json
@@ -56,9 +48,6 @@ You need to implement the following FastAPI endpoints. Please use `http://localh
      ```
 
 #### c. `GET /row_sum`
-   - **Parameters:**
-     - `table_name: str` (Query parameter specifying the name of the table)
-     - `row_name: str` (Query parameter specifying the name of the row, which must be one of the names returned by `/get_table_details`)
    - **Functionality:** This endpoint should calculate and return the sum of all numerical data points in the specified row of the specified table.
    - **Example:** If the `row_name` is `"Tax Credit (if any )="` for a table where this row contains the value `10` (or `10%`), the output should be:
      ```json
@@ -73,10 +62,13 @@ You need to implement the following FastAPI endpoints. Please use `http://localh
 
 ## Testing
 
-To help us quickly test your application, please provide a Postman collection JSON.
+You can import the following Postman collection to test:
 
-*   **Base URL:** `http://localhost:9090` and the given endpoint names.
-*   **Postman Collection:** 
+Postman Collection
+
+Make sure the server is running at http://localhost:9090.
+
+
 
 ## Potential Improvements
 
